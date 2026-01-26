@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Icona Pasti nel Cartellino
 // @namespace     https://unibo.it/
-// @version       1.0
+// @version       1.1
 // @description   Mostra un'icona taco quando nella colonna "Pasti" c'è il valore "1"
 // @author        Stefano
 // @match         https://personale-unibo.hrgpi.it/*
@@ -37,8 +37,8 @@
                     // Crea l'immagine
                     const icona = document.createElement('img');
                     icona.src = ICON_URL;
-                    icona.style.width = '20px';
-                    icona.style.height = '20px';
+                    icona.style.width = '50px';
+                    icona.style.height = '50px';
                     icona.style.display = 'block';
                     icona.style.margin = '0 auto';
                     icona.alt = 'Pasto';
