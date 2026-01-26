@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Icona Pasti nel Cartellino
 // @namespace     https://unibo.it/
-// @version       1.2
+// @version       1.3
 // @description   Mostra un'icona taco quando nella colonna "Pasti" c'è il valore "1"
 // @author        Stefano
 // @match         https://personale-unibo.hrgpi.it/*
@@ -13,7 +13,7 @@
     'use strict';
 
     // URL dell'icona taco
-    const ICON_URL = 'https://github.com/stefano-salvatore7/icona_piadina/blob/main/piadina.png';
+    const ICON_URL = 'https://raw.githubusercontent.com/stefano-salvatore7/icona_piadina/refs/heads/main/piadina.png';
 
     // Funzione per sostituire "1" con l'icona nella colonna Pasti
     function sostituisciPastiConIcona() {
