@@ -44,6 +44,10 @@ I browser moderni bloccano gli script utente per sicurezza. È necessario abilit
 4.  Assicurati che l'opzione **"Consenti estensioni da altri archivi"** sia attiva.
 5.  **Assicurati che l'opzione "Consenti l'accesso agli URL del file" sia attiva.**
 
+#### Per Firefox:
+
+Non sono necessarie abilitazioni
+
 ### 3. Installazione dello Script per Aggiornamenti Automatici
 
 Per assicurarti che lo script si aggiorni automaticamente quando vengono rilasciate nuove versioni sul repository GitHub:
