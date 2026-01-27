@@ -7,7 +7,7 @@ Questo script Tampermonkey/Greasemonkey è progettato per il sistema di gestione
 ## Caratteristiche
 
 * **Sostituzione Icona Piadina:** Identifica il valore "1" nella colonna Pasti e lo sostituisce con un'icona piadina (50x50px) centrata, rendendo il cartellino più visivo e intuitivo.
-* **Conteggio Totale Ticket:** Scansiona l'intera tabella del mese e calcola la somma dei pasti consumati.
+* **Conteggio Totale Ticket:** Scansiona l'intera tabella del mese e calcola la somma dei ticket di cui si ha diritto.
 * **Intestazione Dinamica:** Rinomina l'intestazione della colonna da "Pasti" a **"Ticket: n"** (dove *n* è il totale calcolato), mantenendo lo stile originale della tabella.
 * **Rilevamento Intelligente:** Grazie a un sistema di controllo ciclico (`setInterval`), lo script si attiva solo quando la tabella è effettivamente caricata dal portale, garantendo il funzionamento anche su connessioni lente.
 * **Apparizione Condizionale:** Lo script agisce esclusivamente sulla pagina "Cartellino", evitando interferenze con altre sezioni del portale HR.
