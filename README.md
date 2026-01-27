@@ -16,7 +16,7 @@ Questo script Tampermonkey/Greasemonkey è progettato per il sistema di gestione
 
 Per installare lo script e assicurarti che il browser ne permetta l'esecuzione, segui attentamente questi passaggi:
 
-### 1. Installare l'estensione Tampermonkey
+### 1. Installare l'estensione [Tampermonkey](https://www.tampermonkey.net/)
 
 Se non l'hai già fatto, installa l'estensione Tampermonkey nel tuo browser:
 
