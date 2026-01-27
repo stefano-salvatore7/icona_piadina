@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name          Icona Pasti nel Cartellino - Conteggio Attivo
+// @name          Icona Pasti nel Cartellino - Conteggio Ticket
 // @namespace     https://unibo.it/
-// @version       1.8
-// @description   Sostituisce "1" con l'icona e somma i pasti nell'intestazione (versione stabile)
+// @version       1.9
+// @description   Sostituisce "1" con l'icona e rinomina la colonna in "Ticket: n"
 // @author        Stefano
 // @match         https://personale-unibo.hrgpi.it/*
 // @icon          https://www.unibo.it/favicon.ico
@@ -12,29 +12,29 @@
 (function () {
     'use strict';
 
-    // URL dell'icona piadina
+    // URL dell'icona piadina (quella usata nella tua versione originale)
     const ICON_URL = 'https://raw.githubusercontent.com/stefano-salvatore7/icona_piadina/refs/heads/main/piadina.png';
 
-    // Funzione per sostituire "1" con l'icona e contare i pasti
-    function sostituisciPastiEConta() {
+    // Funzione per sostituire "1" con l'icona e aggiornare l'intestazione
+    function gestisciPasti() {
         // Trova tutte le righe della tabella
         const righe = document.querySelectorAll('table tr');
-        let contatorePasti = 0;
+        let totalePasti = 0;
 
-        // --- CICLO SULLE RIGHE PER ICONE E CONTEGGIO ---
+        // --- PARTE 1: Sostituzione icone e calcolo somma ---
         righe.forEach(riga => {
             const celle = riga.querySelectorAll('td.table_td_mese');
             
-            // La colonna "Pasti" è all'indice 10
+            // Verifichiamo che la riga abbia la colonna Pasti (indice 10)
             if (celle.length >= 11) {
                 const cellaPasti = celle[10];
                 
-                // Controlla se il contenuto è "1"
+                // Controlla se il valore è "1"
                 if (cellaPasti.textContent.trim() === '1') {
-                    // Incrementiamo il contatore per il totale
-                    contatorePasti++;
+                    // Incrementiamo il numero totale per il titolo della colonna
+                    totalePasti++;
 
-                    // Svuota la cella e inserisce l'icona
+                    // Sostituzione testo con icona
                     cellaPasti.innerHTML = '';
                     const icona = document.createElement('img');
                     icona.src = ICON_URL;
@@ -50,29 +50,30 @@
             }
         });
 
-        // --- AGGIORNAMENTO INTESTAZIONE (RENDERLO EVIDENTE) ---
-        const headers = document.querySelectorAll('table th');
-        headers.forEach(header => {
+        // --- PARTE 2: Aggiornamento Intestazione ---
+        // Cerchiamo la cella di intestazione (th) che contiene il testo "Pasti"
+        const intestazioni = document.querySelectorAll('table th');
+        intestazioni.forEach(header => {
             if (header.textContent.trim() === 'Pasti') {
-                // Inseriamo il numero totale: lo rendiamo rosso, grassetto e un po' più grande
-                header.innerHTML = `<span style="color: #e31a24; font-size: 1.1em; font-weight: bold;">${contatorePasti} Pasti</span>`;
+                // Rinominiamo la colonna come richiesto, mantenendo lo stile originale
+                header.textContent = `Ticket: ${totalePasti}`;
             }
         });
     }
 
-    // Usiamo lo stesso metodo dell'originale per attendere la tabella (sicuro al 100%)
+    // Struttura originale di attesa caricamento (setInterval 500ms)
     const waitForTable = setInterval(() => {
         const tabella = document.querySelector('table');
         const cartellinoTitle = document.querySelector('div.title-label');
         const isCartellinoPage = cartellinoTitle && cartellinoTitle.textContent.includes('Cartellino');
 
         if (isCartellinoPage && tabella) {
-            // Quando la tabella è pronta, fermiamo il loop ed eseguiamo la funzione
+            // Quando la tabella è visibile, fermiamo il loop e processiamo i dati
             clearInterval(waitForTable);
             
-            sostituisciPastiEConta();
+            gestisciPasti();
             
-            console.log('✅ Conteggio completato e icone aggiunte!');
+            console.log(`✅ Script completato: ${totalePasti} ticket rilevati.`);
         }
     }, 500);
 })();
