@@ -1,6 +1,6 @@
 # EVO Icona Pasti e Conteggio Ticket
 
-Questo script Tampermonkey/Greasemonkey è progettato per il sistema di gestione delle presenze EVO (usato su `https://personale-unibo.hrgpi.it/`). Trasforma la visualizzazione della colonna "Pasti" sostituendo il valore "1" con un'icona personalizzata e calcolando automaticamente il totale dei ticket mensili.
+Questo script Tampermonkey/Greasemonkey è progettato per il sistema di gestione delle presenze EVO (`https://personale-unibo.hrgpi.it/`). Trasforma la visualizzazione della colonna "Pasti" sostituendo il valore "1" con un'icona personalizzata e calcolando automaticamente il totale dei ticket mensili.
 
 **(Versione Script: 1.9)**
 
