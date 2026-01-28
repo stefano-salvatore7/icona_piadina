@@ -52,7 +52,7 @@ Non sono necessarie abilitazioni
 
 Per assicurarti che lo script si aggiorni automaticamente quando vengono rilasciate nuove versioni sul repository GitHub:
 
-[**Clicca qui per installare/aggiornare EVO Icona Pasti e Conteggio Ticket**](https://raw.githubusercontent.com/stefano-salvatore7/icona_piadina/main/icona-pasti-ticket.user.js)
+[**Clicca qui per installare/aggiornare EVO Icona Pasti e Conteggio Ticket**](https://github.com/stefano-salvatore7/icona_piadina/raw/refs/heads/main/evo-piadina-cartellino.user.js)
 
 * Dopo aver cliccato, Tampermonkey ti mostrerà il codice dello script e ti chiederà di **"Installa"** o **"Aggiorna"**. Conferma l'azione.
 
